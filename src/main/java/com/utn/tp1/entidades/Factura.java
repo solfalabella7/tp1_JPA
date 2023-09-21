@@ -17,12 +17,24 @@ import java.util.Date;
 public class Factura implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="Id")
     private int idFactura;
+
+    @Column(name="Forma de pago")
     private String formaPago;
+
+    @Column(name="Número")
     private int numero;
+
+    @Column(name="Fecha")
     private Date fecha;
+
+    @Column(name ="Descuento")
     private double descuento;
+
+    @Column(name="Total")
     private int total;
+
     @OneToOne(mappedBy = "factura")
     private Pedido pedido;
 }
